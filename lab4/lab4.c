@@ -33,6 +33,9 @@ int main() {
   initialize_block(first, 128, NULL);
   initialize_block(second, 128, first);
 
+  print_out("First block before:      %p\n", &first, sizeof(first));
+  print_out("Second block before:     %p\n", &second, sizeof(second));
+
   memset((char *)first + sizeof(*first), 0, 128 - sizeof(*first));
   memset((char *)second + sizeof(*second), 1, 128 - sizeof(*second));
 
